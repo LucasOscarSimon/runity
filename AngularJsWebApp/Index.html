@@ -1,0 +1,61 @@
+﻿<!DOCTYPE html>
+<html data-ng-app="AngularApp">
+<head>
+    <meta content="IE=edge, chrome=1" http-equiv="X-UA-Compatible" />
+    <title>AngularJS - OWIN Authentication</title>
+    <link href="Asset/Content/bootstrap.min.css" rel="stylesheet" />
+    <link href="Asset/Content/ProjectStyle.css" rel="stylesheet" />
+</head>
+<body>
+    <div class="navbar navbar-inverse navbar-fixed-top" role="navigation" data-ng-controller="indexController">
+        <div class="container">
+            <div class="collapse navbar-collapse" data-collapse="!navbarExpanded">
+                <ul class="nav navbar-nav navbar-right">
+                    <li data-ng-hide="!authentication.IsAuthenticated"><a href="#">Welcome, {{authentication.userName}}</a></li>
+                    <li data-ng-hide="!authentication.IsAuthenticated"><a href="#/myInfo">My Info</a></li>
+                    <li data-ng-hide="!authentication.IsAuthenticated"><a href="" data-ng-click="logOut()">Logout</a></li>
+                    <li data-ng-hide="authentication.IsAuthenticated"> <a href="#/login">Login</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="jumbotron">
+        <div class="container">
+            <div class="page-header text-center">
+                <h3>AngularJS Owin Authentication</h3>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <div data-ng-view="">
+        </div>
+    </div>
+    <hr />
+    <div id="footer">
+        <div class="container">
+            <div class="row">
+                AngularJS - OAuth Bearer Token Implementation Example 
+            </div>
+        </div>
+    </div>
+    <!-- 3rd party libraries -->
+    <script src="Asset/Scripts/angular.js"></script>
+    <script src="Asset/Scripts/angular-route.js"></script>
+    <script src="Asset/Scripts/angular-local-storage.min.js"></script>
+
+    <!-- Load app main script -->
+    <script src="Modules/app.js"></script>
+
+    <!-- Load Angular services -->
+    <script src="Modules/Services/loginService.js"></script>
+    <script src="Modules/Services/AuthenticationService.js"></script>
+    <script src="Modules/Services/AuthData.js"></script>
+    <!-- Load Angular controllers -->
+    
+    <script src="Modules/Controllers/indexController.js"></script>
+    <script src="Modules/Controllers/homeController.js"></script>
+    <script src="Modules/Controllers/loginController.js"></script>
+    <script src="Modules/Controllers/nextController.js"></script>
+</body>
+</html>
+
